@@ -353,7 +353,7 @@ try {
                     let dta = await getUserResponse.json();
                     for (const value of dta) {
 if(value.path.match(/.(jpg|jpeg|jfif|pjpeg|pjp|apng|ico|cur|webp|png|gif|bmp|svg|tiff)$/i)){
-           let imgurl = "https://smartvnm.github.io/" + value.path;
+           let imgurl = '{{ site.url }}' + value.path;
             img.push(imgurl);
                }
           }
@@ -403,9 +403,9 @@ var go = document.querySelector('#go');
 var title = document.querySelector('#p_title').value;
 var ctoken = getCookie('token');
 var gt = JSON.parse('{"token":"' + ctoken + '"}');
-var API_NEW_POST = 'https://api.github.com/repos/smartvnm/smartvnm.github.io/contents/_posts/';
+var API_NEW_POST = 'https://api.github.com/repos/'+'{{ site.github.repo }}'+'/contents/_posts/';
 var upimg = document.querySelector('#upimg');
-var API_NEW_IMG = 'https://api.github.com/repos/smartvnm/smartvnm.github.io/contents/assets/';
+var API_NEW_IMG = 'https://api.github.com/repos/'+'{{ site.github.repo }}'+'/contents/assets/';
 
 
 
@@ -518,7 +518,7 @@ console.log(data.content);})
 }} 
 upimg.onchange = async function() {
 $('#selectimages').modal('hide');
-$('#loader').css("display","block"));
+$('#loader').css("display":"block"));
  try {
    urlnp = API_NEW_IMG + upimg.files.item(0).name;
    let postcontent = await getBase64(upimg.files.item(0));
@@ -526,9 +526,9 @@ $('#loader').css("display","block"));
 
   await fetchAsync(urlnp, postcontent).then(data => function(data) {
 console.log(data.content);})
-$('#loader').css("display","none");
+$('#loader').css("display":"none");
 
-$('#cke_133_label').click();
+
 
 } catch (reason) {
    var msg = '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><p>';
