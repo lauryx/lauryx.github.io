@@ -518,7 +518,7 @@ console.log(data.content);})
 }} 
 upimg.onchange = async function() {
 $('#selectimages').modal('hide');
-$('#loader').show();
+$('#loader').css("display","block"));
  try {
    urlnp = API_NEW_IMG + upimg.files.item(0).name;
    let postcontent = await getBase64(upimg.files.item(0));
@@ -526,7 +526,7 @@ $('#loader').show();
 
   await fetchAsync(urlnp, postcontent).then(data => function(data) {
 console.log(data.content);})
-$('#loader').hide();
+$('#loader').css("display","none");
 
 $('#cke_133_label').click();
 
