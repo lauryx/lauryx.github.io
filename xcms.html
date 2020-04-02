@@ -353,7 +353,7 @@ try {
                     let dta = await getUserResponse.json();
                     for (const value of dta) {
 if(value.path.match(/.(jpg|jpeg|jfif|pjpeg|pjp|apng|ico|cur|webp|png|gif|bmp|svg|tiff)$/i)){
-           let imgurl = '{{ site.url }}' + value.path;
+           let imgurl = '/' + value.path;
             img.push(imgurl);
                }
           }
