@@ -20,8 +20,9 @@ menu:
     url: /contact
   - title: Feed
     url: /feed.xml
-github:   repo: lauryx/lauryx.github.io 
-branch: master
+github: 
+  repo: lauryx/lauryx.github.io 
+  branch: master
 
 # Social Media Settings
 # Remove the item if you don't need it
