@@ -1,0 +1,160 @@
+---
+--- 
+<html> 
+<head>    <meta charset="utf-8">   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" type="text/css" />   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" />    <title>Jekyll+GitHub API+JS=Dynamic CMS :-)</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/eruda/2.2.0/eruda.js"></script>
+<script>
+eruda.init();
+</script>    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>   <script src="https://cdn.ckeditor.com/4.14.0/full/ckeditor.js"></script>   <script src="https://cdnjs.cloudflare.com/ajax/libs/image-picker/0.3.1/image-picker.min.js" integrity="sha256-P13mkADbtcK0GtB1ZJQUEkvYmdA1Vr8C1qgIreybN1U=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/image-picker/0.3.1/image-picker.min.css" integrity="sha256-8b3s+ez6wXPJKBWlHOEW2aXyB1eYluL1V3wqh+vHpis=" crossorigin="anonymous" />     <meta name="viewport" content="width=device-width, initial-scale=1"> 
+<style>
+.modal-content{
+position: relative;
+width: 100%;
+height: auto;
+} 
+.thumbnails .image_picker_selector{
+position: relative;
+height: auto;
+} 
+ul {     display: flex;     flex-direction: row;     flex-wrap: wrap;     width: 100%;     padding-left: 0;   }    li {     list-style: none;     display: inline-block;     width: 9em;     height: 9em;     text-align: center;     overflow: hidden;   }     * {     font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;     text-align: center;   }   .ImagePreviewBox {     max-width: 60vW;
+}    h1 small {     display: block;     font-size: 1.5rem;   }    h2 {     margin-top: 10rem;   }    #signed-in, #signed-out, #loading {     display: none;   }    [data-state="signed-out"] #signed-out,   [data-state="signed-in"] #signed-in,   [data-state="loading"] #loading {     display: block;   } 
+.thumbnail {       overflow: hidden;
+} 
+.image_picker_image {   width: 9em;   height: 9em;   position: relative;   object-fit: cover;   
+}    
+body {   margin: 0;   padding: 0;
+}  
+.modal-body {     max-height: 35em;     overflow: scroll;     height: 100%;   display: flex;   align-items: center;   justify-content: center;
+} 
+ul.thumbnails.image_picker_selector{ 
+}
+.btn-file {   position: relative;   overflow: hidden;
+}
+.btn-file input[type=file] {   position: absolute;   top: 0;   right: 0;   min-width: 100%;   min-height: 100%;   font-size: 100px;   text-align: right;   filter: alpha(opacity=0);   opacity: 0;   outline: none;   background: white;   cursor: inherit;   display: block;
+}
+#loader {   position: relative;    z-index: 10250;   left: 50%;   top: 50%;   transform: translateX(-50%);   transform: translateY(-50%);   border: 16px solid #f3f3f3; /* Light grey */   border-top: 16px solid #3498db; /* Blue */   border-radius: 50%;   width: 120px;   height: 120px;   animation: spin 2s linear infinite;
+} 
+@keyframes spin {   0% { transform: rotate(0deg); }   100% { transform: rotate(360deg); }
+}
+</style>
+</head> 
+<body data-state="signed-out"> 
+<div id="loader" style="display: none"></div>   <p>     Login with GitHub   </p>   <p id="signed-out">     <a href="https://github-oauth-login.laurex.workers.dev">Login</a>   </p>   <p id="signed-in">     Hello there, <span id="login"></span>. (<input type="button" id="logoff" name="logoff" class="btn, btn-default" value="Logout">)   </p>   <p id="loading">     Loading....   </p>      <div class="container" id="container1">     <input type="text" id="log">     <input type="text" id="tok">     <h5>Create new post at {{ site.title }}</h5>     {% if site.github.repo == none %}     <div class="alert alert-danger" role="alert"><code>github.repo</code> is not set. Check <a href="https://github.com/vrypan/jekyll-post-via-web">github.com/vrypan/jekyll-post-via-web</a> for instructions.</div>     {% endif %}     {% if site.github.branch == none %}     <div class="alert alert-danger" role="alert"><code>github.branch</code> is not set. Check <a href="https://github.com/vrypan/jekyll-post-via-web">github.com/vrypan/jekyll-post-via-web</a> for instructions.</div>     {% endif %}     <div id="messages"></div>     <form id="theform" method="get">       <div class="form-group">         <input type="text" class="form-control" placeholder="Post Title" id="p_title" name="title">       </div>       <div class="form-group">         <textarea class="form-control" rows="10" id="px_body" placeholder="Type your post here." name="body"></textarea>       </div>       <input type="button" class="btn btn-default" id="go" value="Post" />       <div class="collapse" id="submitform">         <br>                </div>     </form>     <textarea id="p_body" style="display:none"></textarea>        </div>  
+<div class="modal fade" id="selectimages" tabindex="-1" style="z-index:10200" role="dialog" aria-labelledby="SelectImages" aria-hidden="true">   <div class="modal-dialog modal-dialog-scrollable modal-full" role="document">            <div class="modal-content">       <div class="modal-header">         <h5 class="modal-title" id="exampleModalCenterTitle">Select Image</h5>         <button type="button" class="close" data-dismiss="modal" aria-label="Close">           <span aria-hidden="true">&times;</span>         </button>       </div>       <div class="modal-body">                  <select class="image-picker" id="imgselect">         </select>       </div>       <div class="modal-footer">         <button type="button" class="btn btn-s~econdary" data-dismiss="modal">Close</button>         <span class="btn btn-primary btn-file">     Upload New<input type="file" id="upimg">         </span>         <button type="button" class="btn btn-primary" id="use">Use Image</button>       </div>     </div>   </div>
+</div> 
+<script>
+var ctoken = getCookie('token');
+var gt = JSON.parse('{"token":"' + ctoken + '"}');
+const $login = document.querySelector("#login");
+const $logoff = document.querySelector("#logoff");
+log.value = ctoken;
+const WORKER_URL = "https://github-oauth-login.laurex.workers.dev";
+var code = new URL(location.href).searchParams.get("code"); 
+$logoff.onclick = function logoff() {
+setCookie("token", null, -1);
+window.location.reload(true); 
+};
+function getCookie(n) { let a = `; ${document.cookie}`.match(`;\\s*${n}=([^;]+)`); return a ? a[1] : ''; }  
+function setCookie(cname, cvalue, exdays) { 	var d = new Date(); 	d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000)); 	var expires = "expires=" + d.toUTCString(); 	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}   
+(async function() {  	if (code) {
+async function login(code) {   	// remove ?code=... from URL   	const path = location.pathname + location.search.replace(/\bcode=\w+/, "").replace(/\?$/, "");   	history.pushState({}, "", path);   	document.body.dataset.state = "loading";   	try {    	let response = await fetch(WORKER_URL, {     	method: "POST",     	mode: "cors",     	headers: {      	"content-type": "application/json"     	},     	body: JSON.stringify({      	code     	})    	});    	gt = await response.json();           	if (gt.error) {     	return alert(JSON.stringify(gt, null, 2));    	}        setCookie("token", gt.token, 1);             return gt;                     } catch (error) {           alert(error);           location.reload();         }       }              gt = await login(code);
+try {             const getUserResponse = await fetch("https://api.github.com/user", {
+headers: {
+accept: "application/vnd.github.v3+json",
+authorization: `token ${gt.token}`
+}
+});      let dta = await getUserResponse.json();
+$login.textContent = dta.login;
+document.body.dataset.state = "signed-in";     } catch(error) {
+alert(error);
+document.body.dataset.state = "signed-out";                     } 	} else if (ctoken){      try {
+const getUserResponse = await fetch("https://api.github.com/user", {
+headers: {
+accept: "application/vnd.github.v3+json",
+authorization: `token ${gt.token}`
+}
+});      let dta = await getUserResponse.json();
+$login.textContent = dta.login;
+document.body.dataset.state = "signed-in";    } catch(error){
+alert(error);
+document.body.dataset.state = "signed-out"; 
+}
+}
+})(); 
+</script>    <script>     CKEDITOR.replace('px_body', {       height: 400,       baseFloatZIndex: 10005,       filebrowserBrowseUrl :'javascript:void(0)'     });     CKEDITOR.instances.px_body.on("change", function () {     e = CKEDITOR.instances.px_body.document.getBody().getHtml();     $('#p_body').val(e);     });     CKEDITOR.on('dialogDefinition', function(ev) {           //dialogDefinition is a ckeditor event it's fired when ckeditor dialog instance is called           var dialogName = ev.data.name;           var dialogDefinition = ev.data.definition;                   if (dialogName == 'image') { //dialogName is name of dialog and identify which dialog is fired.                            var infoTab = dialogDefinition.getContents('info'); // get tab of the dialog               var linkTab = dialogDefinition.getContents('Link');               linkTab.remove('browse');              var browse = infoTab.get('browse'); //get browse server button               browse.onClick = function() {                   //here we can invoke our custom fileuploader or server files popup                   var API_ASSETS = 'https://api.github.com/repos/smartvnm/smartvnm.github.io/contents/assets/';
+async function getimg(){
+img = [];
+try {                     const getUserResponse = await fetch(API_ASSETS, {                         headers: {                             accept: "application/vnd.github.v3+json",                             authorization: `token ${gt.token}`                         }                     });                     let dta = await getUserResponse.json();                     for (const value of dta) {
+if(value.path.match(/.(jpg|jpeg|jfif|pjpeg|pjp|apng|ico|cur|webp|png|gif|bmp|svg|tiff)$/i)){            let imgurl = "https://smartvnm.github.io/" + value.path;             img.push(imgurl);                }           }
+let sel = document.querySelector("#imgselect");               for (const src of img){
+var myOption = document.createElement("option");
+myOption.setAttribute('data-img-src', src);
+myOption.value = src;
+myOption.text = src; 
+sel.add(myOption);
+}
+$("#imgselect > option").each(function() {     $(this).addClass("col-xs-2 col-md-4");
+});
+$("#imgselect").imagepicker();             } catch (error) {                     alert(error);                                        }
+}
+getimg();
+$('#selectimages').modal('show');                                };           }       });  
+$('#use').on("click", function(){
+var simg =  $('#imgselect').val();
+var dialog = CKEDITOR.dialog.getCurrent();  
+dialog.selectPage('info');  
+var tUrl = dialog.getContentElement('info', 'txtUrl');  
+tUrl.setValue(simg); 
+$('#selectimages').modal('hide'); 
+});        var messages = document.querySelector('#messages');
+var p_bodyval = document.querySelector('#p_body').value;
+var go = document.querySelector('#go');
+var title = document.querySelector('#p_title').value;
+var ctoken = getCookie('token');
+var gt = JSON.parse('{"token":"' + ctoken + '"}');
+var API_NEW_POST = 'https://api.github.com/repos/smartvnm/smartvnm.github.io/contents/_posts/';
+var upimg = document.querySelector('#upimg');
+var API_NEW_IMG = 'https://api.github.com/repos/smartvnm/smartvnm.github.io/contents/assets/';   
+function post_date() {  var d = new Date();  return d.toISOString();
+}  
+function slugify(text) {  return text.toString().toLowerCase()   .replace(/\s+/g, '-') // Replace spaces with -   .replace(/[^\w\-]+/g, '') // Remove all non-word chars   .replace(/\-\-+/g, '-') // Replace multiple - with single -   .replace(/^-+/, '') // Trim - from start of text   .replace(/-+$/, ''); // Trim - from end of text
+} 
+function getBase64(file) {   return new Promise((resolve, reject) => {     const reader = new FileReader();     reader.readAsDataURL(file);     reader.onload = () => {       let encoded = reader.result.toString().replace(/^data:(.*,)?/, '');       if ((encoded.length % 4) > 0) {         encoded += '='.repeat(4 - (encoded.length % 4));       }       resolve(encoded);     };     reader.onerror = error => reject(error);   });
+}
+function post_file() {  let title = document.querySelector('#p_title').value;  var d = new Date();  var dd = d.getDate();  if (dd < 10) dd = '0' + dd;  var mm = d.getMonth() + 1;  if (mm < 10) mm = '0' + mm;  var yyyy = d.getFullYear();  var filename = yyyy + '-' + mm + '-' + dd;  if (!title) {   filename = filename + '-' + d.getTime();  } else {   var slugified = slugify(title);   filename = filename + '-' + slugified;  }  return filename;
+} 
+function gathertext() {
+var p_bodyval = document.querySelector('#p_body').value;
+var title = document.querySelector('#p_title').value;
+var p_body = '---\n';
+p_body = p_body + 'layout: post \n';
+p_body = p_body + 'title:  "' + title + '" \n';
+p_body = p_body + 'date:   ' + post_date() + ' \n';
+/* Setting the category here is not the most elegant way...
+p_body = p_body + 'categories: tests \n';
+*/
+p_body = p_body + '---\n';
+p_body = p_body + '\n' + p_bodyval;
+console.log(p_body);
+return btoa(unescape(encodeURIComponent(p_body)));  
+} 
+async function fetchAsync(url, postcontent) {  
+const putFile = {  method: 'PUT',  headers: {   accept: "application/vnd.github.v3+json",   authorization: `token ${gt.token}`  },  body: JSON.stringify({   content: `${postcontent}`,   message: 'posted via web',   branch: '{{ site.github.branch }}'  })
+};  let response = await fetch(url, putFile);   if (!response.ok) {       throw Error(response.status+' '+response.statusText)     } else {  let data = await response.json();  return data;
+}
+} 
+go.onclick = async function() {  try {    let urlnp = post_file() + '.md';    urlnp = API_NEW_POST + urlnp;    let postcontent = gathertext();        await fetchAsync(urlnp, postcontent).then(data => function(data) {
+console.log(data.content);})  let container1 = document.querySelector('#container1');  container1.innerHTML = '<h2>Successfully posted to {{ site.title }}</h2';  
+} catch (reason) {    var msg = '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><p>';    msg += reason.message + '</p>';     messages.insertAdjacentHTML('beforeend', msg);
+}} 
+upimg.onchange = async function() {
+$('#selectimages').modal('hide');
+$('#loader').show();  try {    urlnp = API_NEW_IMG + upimg.files.item(0).name;    let postcontent = await getBase64(upimg.files.item(0));    console.log("b64: " + postcontent);    await fetchAsync(urlnp, postcontent).then(data => function(data) {
+console.log(data.content);})
+$('#loader').hide(); 
+$('#cke_133_label').click(); 
+} catch (reason) {    var msg = '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><p>';    msg += reason.message + '</p>';     messages.insertAdjacentHTML('beforeend', msg);
+}}     </script>
+</body>
