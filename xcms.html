@@ -518,7 +518,7 @@ console.log(data.content);})
 }} 
 upimg.onchange = async function() {
 $('#selectimages').modal('hide');
-$('#loader').css("display":"block"));
+$('#loader').css("display":"block");
  try {
    urlnp = API_NEW_IMG + upimg.files.item(0).name;
    let postcontent = await getBase64(upimg.files.item(0));
