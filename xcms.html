@@ -490,6 +490,9 @@ upimg.onchange = async function() {
    
   })
   $('#loader').css("display", "none");
+    getimg();
+   $("#imgselect").imagepicker();
+   $('#selectimages').modal('show');
  } catch (reason) {
   $('#loader').CSS("display", "none");
   var msg = '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><p>';
