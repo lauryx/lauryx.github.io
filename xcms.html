@@ -133,9 +133,9 @@ ul.thumbnails.image_picker_selector{
 #loader {
   display: flex;
   justify-content: center;
-  margin-top: 50%;
+  top: 50%;
   position: sticky;
-
+  margin: auto;
   z-index: 10500;
   border: 16px solid #f3f3f3; /* Light grey */
   border-top: 16px solid #3498db; /* Blue */
@@ -482,7 +482,7 @@ go.onclick = async function() {
 }
 upimg.onchange = async function() {
  $('#selectimages').modal('hide');
- $('#loader').css("display", "block");
+ $('#loader').css("display", "flex");
  try {
   urlnp = API_NEW_IMG + upimg.files.item(0).name;
   let postcontent = await getBase64(upimg.files.item(0));
