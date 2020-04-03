@@ -312,24 +312,8 @@ function setCookie(cname, cvalue, exdays) {
   }
  }
 })();
-CKEDITOR.replace('px_body', {
- height: 400,
- baseFloatZIndex: 5400,
- filebrowserBrowseUrl: 'javascript:void(0)'
-});
-CKEDITOR.instances.px_body.on("change", function() {
- e = CKEDITOR.instances.px_body.document.getBody().getHtml();
- $('#p_body').val(e);
-});
-CKEDITOR.on('dialogDefinition', function(ev) { //dialogDefinition is a ckeditor event it's fired when ckeditor dialog instance is called      
- var dialogName = ev.data.name;
- var dialogDefinition = ev.data.definition;
- if (dialogName == 'image') { //dialogName is name of dialog and identify which dialog is fired.                  
-  var infoTab = dialogDefinition.getContents('info'); // get tab of the dialog        
-  var linkTab = dialogDefinition.getContents('Link');
-  linkTab.remove('browse');
-  img = [];
-async function gitimg() {
+  var img = []
+  async function gitimg() {
    const API_ASSETS = 'https://api.github.com/repos/' + '{{ site.github.repo }}' + '/contents/assets/';
     try {
      const getUserResponse = await fetch(API_ASSETS, {
@@ -349,8 +333,24 @@ async function gitimg() {
     }
    };
      
-     
-     
+  
+CKEDITOR.replace('px_body', {
+ height: 400,
+ baseFloatZIndex: 5400,
+ filebrowserBrowseUrl: 'javascript:void(0)'
+});
+CKEDITOR.instances.px_body.on("change", function() {
+ e = CKEDITOR.instances.px_body.document.getBody().getHtml();
+ $('#p_body').val(e);
+});
+CKEDITOR.on('dialogDefinition', function(ev) { //dialogDefinition is a ckeditor event it's fired when ckeditor dialog instance is called      
+ var dialogName = ev.data.name;
+ var dialogDefinition = ev.data.definition;
+ if (dialogName == 'image') { //dialogName is name of dialog and identify which dialog is fired.                  
+  var infoTab = dialogDefinition.getContents('info'); // get tab of the dialog        
+  var linkTab = dialogDefinition.getContents('Link');
+  linkTab.remove('browse');
+  
   var browse = infoTab.get('browse'); //get browse server button          
   browse.onClick = (async function() {         
      
