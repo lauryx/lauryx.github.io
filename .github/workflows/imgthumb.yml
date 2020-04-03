@@ -1,11 +1,12 @@
-name: Compress images
-on: 
+
+
+name: Image Resizer Action
+  on: 
    push:
      paths:
       - '**.jpg'
       - '**.png'
       - '**.webp'
-- name: Image Resizer Action
   uses: sharadcodes/img-resizer@v1.0
   with:
     image-folder: 'my_images' # This is a Required field & this folder has original images
