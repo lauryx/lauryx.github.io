@@ -5,18 +5,9 @@ on:
       - '**.jpg'
       - '**.png'
       - '**.webp'
-jobs:
-  build:
-    name: calibreapp/image-actions
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
-
-      - name: Compress Images
-        uses: calibreapp/image-actions@master
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-          jpegQuality: "60"
-          pngQuality: "60"
-          webpQuality: "60"
+- name: Image Resizer Action
+  uses: sharadcodes/img-resizer@v1.0
+  with:
+    image-folder: 'my_images' # This is a Required field & this folder has original images
+    new-resolution: '150x150' # This is Required field
+    output-folder: "/assets/thumbnails" # This is Required field & this folder will be used to store resized images
