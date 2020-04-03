@@ -22,46 +22,86 @@ function setCookie(cname, cvalue, exdays) {
  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 (async function() {
-  if (code) {
-   async function login(code) { // remove ?code=... from URL   	const path = location.pathname + location.search.replace(/\bcode=\w+/, "").replace(/\?$/, "");   	history.pushState({}, "", path);   	document.body.dataset.state = "loading";   	try {    	let response = await fetch(WORKER_URL, {     	method: "POST",     	mode: "cors",     	headers: {      	"content-type": "application/json"     	},     	body: JSON.stringify({      	code     	})    	});    	gt = await response.json();           	if (gt.error) {     	return alert(JSON.stringify(gt, null, 2));    	}        setCookie("token", gt.token, 1);             return gt;                     } catch (error) {           alert(error);           location.reload();         }       }              gt = await login(code);
-    try {
-     const getUserResponse = await fetch("https://api.github.com/user", {
-      headers: {
-       accept: "application/vnd.github.v3+json",
-       authorization: `token ${gt.token}`
-      }
-     });
-     let dta = await getUserResponse.json();
-     $login.textContent = dta.login;
-     document.body.dataset.state = "signed-in";
-    } catch (error) {
-     alert(error);
-     document.body.dataset.state = "signed-out";
+ if (code) {
+  async function login(code) { // remove ?code=... from URL   
+   const path = location.pathname + location.search.replace(/\bcode=\w+/, "").replace(/\?$/, "");
+   history.pushState({}, "", path);
+   document.body.dataset.state = "loading";
+   try {
+    let response = await fetch(WORKER_URL, {
+     method: "POST",
+     mode: "cors",
+     headers: {
+      "content-type": "application/json"
+     },
+     body: JSON.stringify({
+      code
+     })
+    });
+    gt = await response.json();
+    if (gt.error) {
+     return alert(JSON.stringify(gt, null, 2));
     }
-   } else if (ctoken) {
-    try {
-     const getUserResponse = await fetch("https://api.github.com/user", {
-      headers: {
-       accept: "application/vnd.github.v3+json",
-       authorization: `token ${gt.token}`
-      }
-     });
-     let dta = await getUserResponse.json();
-     $login.textContent = dta.login;
-     document.body.dataset.state = "signed-in";
-    } catch (error) {
-     alert(error);
-     document.body.dataset.state = "signed-out";
-    }
+    setCookie("token", gt.token, 1);
+    return gt;
+   } catch (error) {
+    alert(error);
+    location.reload();
    }
-  })(); CKEDITOR.replace('px_body', {
-  height: 400,
-  baseFloatZIndex: 10005,
-  filebrowserBrowseUrl: 'javascript:void(0)'
- }); CKEDITOR.instances.px_body.on("change", function() {
-  e = CKEDITOR.instances.px_body.document.getBody().getHtml();
-  $('#p_body').val(e);
- }); CKEDITOR.on('dialogDefinition', function(ev) { //dialogDefinition is a ckeditor event it's fired when ckeditor dialog instance is called           var dialogName = ev.data.name;           var dialogDefinition = ev.data.definition;                   if (dialogName == 'image') { //dialogName is name of dialog and identify which dialog is fired.                            var infoTab = dialogDefinition.getContents('info'); // get tab of the dialog               var linkTab = dialogDefinition.getContents('Link');               linkTab.remove('browse');              var browse = infoTab.get('browse'); //get browse server button               browse.onClick = function() {                   //here we can invoke our custom fileuploader or server files popup                   var API_ASSETS = 'https://api.github.com/repos/'+'{{ site.github.repo }}'+'/contents/assets/';
+  }
+  gt = await login(code);
+  try
+
+  {
+   const getUserResponse = await fetch("https://api.github.com/user", {
+    headers: {
+     accept: "application/vnd.github.v3+json",
+     authorization: `token ${gt.token}`
+    }
+   });
+   let dta = await getUserResponse.json();
+   $login.textContent = dta.login;
+   document.body.dataset.state = "signed-in";
+  } catch (error) {
+   alert(error);
+   document.body.dataset.state = "signed-out";
+  }
+ } else if (ctoken) {
+  try {
+   const getUserResponse = await fetch("https://api.github.com/user", {
+    headers: {
+     accept: "application/vnd.github.v3+json",
+     authorization: `token ${gt.token}`
+    }
+   });
+   let dta = await getUserResponse.json();
+   $login.textContent = dta.login;
+   document.body.dataset.state = "signed-in";
+  } catch (error) {
+   alert(error);
+   document.body.dataset.state = "signed-out";
+  }
+ }
+})();
+CKEDITOR.replace('px_body', {
+ height: 400,
+ baseFloatZIndex: 10005,
+ filebrowserBrowseUrl: 'javascript:void(0)'
+});
+CKEDITOR.instances.px_body.on("change", function() {
+ e = CKEDITOR.instances.px_body.document.getBody().getHtml();
+ $('#p_body').val(e);
+});
+CKEDITOR.on('dialogDefinition', function(ev) { //dialogDefinition is a ckeditor event it's fired when ckeditor dialog instance is called      
+ var dialogName = ev.data.name;
+ var dialogDefinition = ev.data.definition;
+ if (dialogName == 'image') { //dialogName is name of dialog and identify which dialog is fired.                  
+  var infoTab = dialogDefinition.getContents('info'); // get tab of the dialog        
+  var linkTab = dialogDefinition.getContents('Link');
+  linkTab.remove('browse');
+  var browse = infoTab.get('browse'); //get browse server button          
+  browse.onClick = function() { //here we can invoke our custom fileuploader or server files popup            
+   var API_ASSETS = 'https://api.github.com/repos/' + '{{ site.github.repo }}' + '/contents/assets/';
    async function getimg() {
     img = [];
     try {
@@ -202,7 +242,8 @@ go.onclick = async function() {
   let postcontent = gathertext();
   await fetchAsync(urlnp, postcontent).then(data => function(data) {
    console.log(data.content);
-  }) let container1 = document.querySelector('#container1');
+  })
+  let container1 = document.querySelector('#container1');
   container1.innerHTML = '<h2>Successfully posted to {{ site.title }}</h2';
  } catch (reason) {
   var msg = '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><p>';
