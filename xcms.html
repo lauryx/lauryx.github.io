@@ -311,7 +311,7 @@ function setCookie(cname, cvalue, exdays) {
 })();
 CKEDITOR.replace('px_body', {
  height: 400,
- baseFloatZIndex: 10005,
+ baseFloatZIndex: 5400,
  filebrowserBrowseUrl: 'javascript:void(0)'
 });
 CKEDITOR.instances.px_body.on("change", function() {
@@ -467,7 +467,7 @@ go.onclick = async function() {
   urlnp = API_NEW_POST + urlnp;
   let postcontent = gathertext();
   await fetchAsync(urlnp, postcontent).then(data => function(data) {
-   console.log(data.content);
+   
   })
   let container1 = document.querySelector('#container1');
   container1.innerHTML = '<h2>Successfully posted to {{ site.title }}</h2';
@@ -485,7 +485,7 @@ upimg.onchange = async function() {
   let postcontent = await getBase64(upimg.files.item(0));
   console.log("b64: " + postcontent);
   await fetchAsync(urlnp, postcontent).then(data => function(data) {
-   console.log(data.content);
+   
   })
   $('#loader').css("display", "none");
  } catch (reason) {
