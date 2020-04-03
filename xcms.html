@@ -328,47 +328,49 @@ CKEDITOR.on('dialogDefinition', function(ev) { //dialogDefinition is a ckeditor 
   var infoTab = dialogDefinition.getContents('info'); // get tab of the dialog        
   var linkTab = dialogDefinition.getContents('Link');
   linkTab.remove('browse');
-  var browse = infoTab.get('browse'); //get browse server button          
-  browse.onClick = (async function getimg() { //here we can invoke our custom fileuploader or server files popup            
-   var API_ASSETS = 'https://api.github.com/repos/' + '{{ site.github.repo }}' + '/contents/assets/';
-   async function gitimg() {
-    img = [];
+  img = [];
+async function gitimg() {
+   const API_ASSETS = 'https://api.github.com/repos/' + '{{ site.github.repo }}' + '/contents/assets/';
     try {
      const getUserResponse = await fetch(API_ASSETS, {
       headers: {
        accept: "application/vnd.github.v3+json",
        authorization: `token ${gt.token}`
-      }
-     });
-     let dta = await getUserResponse.json();
+      }})
+      let dta = await getUserResponse.json();
      for (const value of dta) {
       if (value.path.match(/.(jpg|jpeg|jfif|pjpeg|pjp|apng|ico|cur|webp|png|gif|bmp|svg|tiff)$/i)) {
        let imgurl = '/' + value.path;
        img.push(imgurl);
       }
      }
-     let sel = document.querySelector("#imgselect");
-     for (const src of img) {
-      sel.options.length = 0;
-      var myOption = document.createElement("option");
-      myOption.setAttribute('data-img-src', src);
-      myOption.value = src;
-      myOption.text = src;
-      sel.add(myOption);
-     }
-     $("#imgselect > option").each(function() {
-      $(this).addClass("col-xs-2 col-md-4");
-     });
-     $("#imgselect").imagepicker();
-    } catch (error) {
+  } catch (error) {
      alert(error);
     }
-   }
-    await gitimg();
-   $('#selectimages').modal('show');
-  };
- }
-}))();
+   };
+     
+     
+     
+  var browse = infoTab.get('browse'); //get browse server button          
+  browse.onClick = (async function() {         
+     
+     await gitimg();
+     let sel = document.querySelector("#imgselect");
+     sel.options.length = 0;
+        for (const src of img) {
+        var myOption = document.createElement("option");
+        myOption.setAttribute('data-img-src', src);
+        myOption.value = src;
+        myOption.text = src;
+        sel.add(myOption);
+        }
+     $("#imgselect > option").each(function() {
+     $(this).addClass("col-xs-2 col-md-4");
+     });
+     $("#imgselect").imagepicker();
+     $('#selectimages').modal('show');
+  })();
+
 $('#use').on("click", function() {
  var simg = $('#imgselect').val();
  var dialog = CKEDITOR.dialog.getCurrent();
@@ -377,6 +379,9 @@ $('#use').on("click", function() {
  tUrl.setValue(simg);
  $('#selectimages').modal('hide');
 });
+}
+    
+})();
 var messages = document.querySelector('#messages');
 var p_bodyval = document.querySelector('#p_body').value;
 var go = document.querySelector('#go');
@@ -444,6 +449,7 @@ function gathertext() {
  console.log(p_body);
  return btoa(unescape(encodeURIComponent(p_body)));
 }
+
 async function fetchAsync(url, postcontent) {
  const putFile = {
   method: 'PUT',
@@ -464,7 +470,7 @@ async function fetchAsync(url, postcontent) {
   let data = await response.json();
   return data;
  }
-}
+};
 go.onclick = async function() {
  try {
   let urlnp = post_file() + '.md';
@@ -480,7 +486,7 @@ go.onclick = async function() {
   msg += reason.message + '</p>';
   messages.insertAdjacentHTML('beforeend', msg);
  }
-}
+};
 upimg.onchange = async function() {
  $('#selectimages').modal('hide');
  $('#loader').css("display", "flex");
@@ -491,7 +497,7 @@ upimg.onchange = async function() {
    
   })
   $('#loader').css("display", "none");
-    getimg();
+    gitimg();
    $("#imgselect").imagepicker();
    $('#selectimages').modal('show');
  } catch (reason) {
@@ -500,6 +506,6 @@ upimg.onchange = async function() {
   msg += reason.message + '</p>';
   messages.insertAdjacentHTML('beforeend', msg);
  }
-}
+};
 </script>
 </body>
