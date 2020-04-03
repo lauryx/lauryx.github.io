@@ -312,7 +312,7 @@ function setCookie(cname, cvalue, exdays) {
   }
  }
 })();
-  
+  var img = []
   async function gitimg() {
    const API_ASSETS = 'https://api.github.com/repos/' + '{{ site.github.repo }}' + '/contents/assets/';
     try {
@@ -352,7 +352,7 @@ CKEDITOR.on('dialogDefinition', function(ev) { //dialogDefinition is a ckeditor 
   linkTab.remove('browse');
   var browse = infoTab.get('browse'); //get browse server button          
   browse.onClick = (async function() {         
-     var img = []
+     img = []    
      await gitimg();
      let sel = document.querySelector("#imgselect");
      sel.options.length = 0;
