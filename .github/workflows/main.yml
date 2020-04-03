@@ -22,6 +22,6 @@ jobs:
       - name: Image Resizer Action
         uses: sharadcodes/img-resizer@v1.0
         with:
-          image-folder: '/assets' # This is a Required field & this folder has original images
+          image-folder: 'tree/master/assets' # This is a Required field & this folder has original images
           new-resolution: '400x200' # This is Required field
-          output-folder: "/assets/thumbs" # This is Required field & this folder will be used to
+          output-folder: "tree/master/assets/thumbs" # This is Required field & this folder will be used to
