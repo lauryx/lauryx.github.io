@@ -350,7 +350,6 @@ CKEDITOR.on('dialogDefinition', function(ev) { //dialogDefinition is a ckeditor 
   var infoTab = dialogDefinition.getContents('info'); // get tab of the dialog        
   var linkTab = dialogDefinition.getContents('Link');
   linkTab.remove('browse');
-  
   var browse = infoTab.get('browse'); //get browse server button          
   browse.onClick = (async function() {         
      
@@ -369,7 +368,7 @@ CKEDITOR.on('dialogDefinition', function(ev) { //dialogDefinition is a ckeditor 
      });
      $("#imgselect").imagepicker();
      $('#selectimages').modal('show');
-  })();
+  });
 
 $('#use').on("click", function() {
  var simg = $('#imgselect').val();
