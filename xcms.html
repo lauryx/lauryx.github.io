@@ -488,6 +488,7 @@ go.onclick = async function() {
 };
 upimg.onchange = async function() {
  $('#selectimages').modal('hide');
+  alert("It will take a minute for the uploaded image to show in list");
  $('#loader').css("display", "flex");
  try {
   urlnp = API_NEW_IMG + upimg.files.item(0).name;
