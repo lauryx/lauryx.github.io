@@ -1,4 +1,5 @@
 var ctoken = getCookie('token');
+
 var gt = JSON.parse('{"token":"' + ctoken + '"}');
 const $login = document.querySelector("#login");
 const $logoff = document.querySelector("#logoff");
