@@ -152,7 +152,7 @@ ul.thumbnails.image_picker_selector{
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-#body {
+body {
 position: relative;
 }
 </style>
@@ -489,12 +489,12 @@ upimg.onchange = async function() {
  try {
   urlnp = API_NEW_IMG + upimg.files.item(0).name;
   let postcontent = await getBase64(upimg.files.item(0));
-  console.log("b64: " + postcontent);
   await fetchAsync(urlnp, postcontent).then(data => function(data) {
    
   })
   $('#loader').css("display", "none");
  } catch (reason) {
+  $('#loader').CSS("display", "none");
   var msg = '<div class="alert alert-danger alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><p>';
   msg += reason.message + '</p>';
   messages.insertAdjacentHTML('beforeend', msg);
