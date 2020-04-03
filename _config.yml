@@ -10,7 +10,7 @@ tags:
   - theme
   - netlify
 email: youremail@xyz.com
-disqus_username: disqus_username
+#disqus_username: disqus_username
 show_hero: true
 menu:
   - title: Home
@@ -103,4 +103,4 @@ exclude: [
 ]
 
 # Theme
-version: v3.0.2
+#version: v3.0.2
