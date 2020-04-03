@@ -329,7 +329,7 @@ CKEDITOR.on('dialogDefinition', function(ev) { //dialogDefinition is a ckeditor 
   var linkTab = dialogDefinition.getContents('Link');
   linkTab.remove('browse');
   var browse = infoTab.get('browse'); //get browse server button          
-  browse.onClick = function getimg() { //here we can invoke our custom fileuploader or server files popup            
+  browse.onClick = async function getimg() { //here we can invoke our custom fileuploader or server files popup            
    var API_ASSETS = 'https://api.github.com/repos/' + '{{ site.github.repo }}' + '/contents/assets/';
    async function gitimg() {
     img = [];
