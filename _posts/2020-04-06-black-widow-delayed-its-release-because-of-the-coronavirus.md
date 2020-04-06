@@ -6,7 +6,7 @@
  image:https://img-cdn.hipertextual.com/files/2020/01/hipertextual-mira-espectacular-nuevo-trailer-viuda-negra-2020457263.jpg?strip=all&lossy=1&quality=70&ssl=1
  category: news 
  paginate: true 
- ---
+---
 
 
 Disney has delayed the expected release of Black Widow because the coronavirus pandemic, according to The Hollywood Reporter. The film, which was scheduled to reach theaters on April 30, was one of the few that had survived the recent wave of delays in the world of entertainment. It was rather strange that those led by Mickey Mouse did not take this decision beforehand.
