@@ -1,5 +1,5 @@
 --- 
-date: 2020-04-06 22-09-43 
+date: 2020-04-06 22:09:43 
 layout: post 
 title: 'Black Widow' delayed its release because of the coronavirus
 description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
