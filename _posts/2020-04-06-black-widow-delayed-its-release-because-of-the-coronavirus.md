@@ -1,7 +1,7 @@
 --- 
 date: 2020-04-06 22:09:43 
 layout: post 
-title: 'Black Widow' delayed its release because of the coronavirus
+title: Black Widow delayed its release because of the coronavirus
 description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 image: https://img-cdn.hipertextual.com/files/2020/01/hipertextual-mira-espectacular-nuevo-trailer-viuda-negra-2020457263.jpg?strip=all&lossy=1&quality=70&ssl=1
 category: news 
