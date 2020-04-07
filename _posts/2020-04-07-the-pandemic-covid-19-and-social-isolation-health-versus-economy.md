@@ -3,10 +3,6 @@ date: 2020-04-07 17-00-55
 layout: post
 title: The pandemic Covid-19 and social isolation: health versus economy
 description: "This is based essentially on the idea that the economic impacts of isolation are greater than their benefits in terms of public health.
-To date (March 25), official sources [2] reported that, overall, there are 459,000 people who have been demonstrably infected COVID-19.
-Or even greater than the costs of the current isolation.
-These could become casual victims of a crisis that can not be avoided, at least can be mitigated.
-
 image: https://www.ufrgs.br/fce/wp-content/themes/twentyseventeen/opengraph/opengraph_thumb.jpg
 category: news
 paginate: true
