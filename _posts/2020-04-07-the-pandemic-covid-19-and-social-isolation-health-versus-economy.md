@@ -2,7 +2,7 @@
 date: 2020-04-07 17-00-55
 layout: post
 title: The pandemic Covid-19 and social isolation: health versus economy
-description: This is based essentially on the idea that the economic impacts of isolation are greater than their benefits in terms of public health
+description: Lorem Ipsum
 image: https://www.ufrgs.br/fce/wp-content/themes/twentyseventeen/opengraph/opengraph_thumb.jpg
 category: news
 paginate: true
