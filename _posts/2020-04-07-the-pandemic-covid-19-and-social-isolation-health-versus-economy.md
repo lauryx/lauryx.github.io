@@ -71,4 +71,4 @@ In short, not practice temporary social isolation can produce a social catastrop
 </small>
 <br>
 
-<small>Source: <a href='https://www.ufrgs.br/fce/a-pandemia-do-covid-19-e-o-isolamento-social-saude-versus-economia/'><a></small
+<small>Source: <a href='https://www.ufrgs.br/fce/a-pandemia-do-covid-19-e-o-isolamento-social-saude-versus-economia/'><a></small>
