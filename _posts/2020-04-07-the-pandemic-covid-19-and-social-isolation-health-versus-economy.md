@@ -2,7 +2,7 @@
 date: 2020-04-07 17-00-55
 layout: post
 title: The pandemic Covid-19 and social isolation: health versus economy
-description: "This is based essentially on the idea that the economic impacts of isolation are greater than their benefits in terms of public health.
+description: This is based essentially on the idea that the economic impacts of isolation are greater than their benefits in terms of public health
 image: https://www.ufrgs.br/fce/wp-content/themes/twentyseventeen/opengraph/opengraph_thumb.jpg
 category: news
 paginate: true
@@ -10,8 +10,7 @@ paginate: true
 
 
 Andrés Ferrari and André Moreira Cunha, professors of the Department of Economics and International Relations of the UFRGS
-
-Gained prominence in the current debate on the pandemic COVID-19 criticism of social isolation strategy. This is based essentially on the idea that the economic impacts of isolation are greater than their benefits in terms of public health. It is argued that any social contact restriction should be targeted at risk groups of this pandemic, that is, people over 60 years of age or who are suffering from chronic diseases. As a consequence, the rest of society should return to normal as soon as possible in order to reduce the economic impact of this new form of "sudden stop" [1].
+gained prominence in the current debate on the pandemic COVID-19 criticism of social isolation strategy. This is based essentially on the idea that the economic impacts of isolation are greater than their benefits in terms of public health. It is argued that any social contact restriction should be targeted at risk groups of this pandemic, that is, people over 60 years of age or who are suffering from chronic diseases. As a consequence, the rest of society should return to normal as soon as possible in order to reduce the economic impact of this new form of "sudden stop" [1].
 
 Proponents of the "return to normality" argue that deaths caused by COVID-19 as a proportion of the total population are lower than those deaths from other illnesses or social processes, such as murder and traffic accidents. And, by logical imposition, if the economy does not usually stop due to such problems, there would be prevented by the effect of an even less lethal virus.
 
