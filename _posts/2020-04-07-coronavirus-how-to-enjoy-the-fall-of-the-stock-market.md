@@ -2,7 +2,7 @@
 date: 2020-04-07 20:55:58
 layout: post
 title: Coronavirus: how to enjoy the fall of the stock market?
-description: Recall that we are not facing a risk but a reality, a major health crisis, and thus a total uncertainty.
+description: | Recall that we are not facing a risk but a reality, a major health crisis, and thus a total uncertainty.
 For one to two months, the global pandemic led to significant containment operations, which results in disruption of economic activities that can easily imagine.
 The relay through social networks of fear of the disease is, however, a formidable aggravation factor.
 Just like the 2008 financial crisis, we are not facing a recession but a judgment of economic activity.
