@@ -52,15 +52,20 @@ In short, not practice temporary social isolation can produce a social catastrop
 <br><small>
 [1] The term "sudden stop" has been used in literature to designate financial crises sudden and intense process of capital flight, usually associated with foreign exchange and balance of payments crises. Your current job is due to the work of the economist Guillermo Calvo.
 </small>
+<br>
 <small>
 [2] See details at: https://www.worldometers.info/coronavirus/. This source compiles the information provided by WHO and national governments.
   </small>
+  <br>
 <small>
 [3] See the estimates of Gourinchas (2020), Flattening the pandemic and recession curves (https://sites.google.com/view/pgourinchas/home).
 </small>
+<br>
   <small>
 [4] See the Manifesto of FCE Teachers in: https://www.ufrgs.br/fce/professores-da-ufrgs-lancam-manifesto-com-diretrizes-para-combate-a-pandemia-do-novo- coronavirus /.
 </small>
+<br>
+<small>
 [5] See: "The policies that are being adopted to combat Covid-19: International Experience and Brazil," Manoel Pires - IBRE - Observatory of Fiscal Economics, March 23, 2020.
 </small>
 <small>
