@@ -49,15 +49,19 @@ There is time to act in a context of exceptionality but in order to maintain ord
 Social isolation can help reduce contamination and thereby give priority to the care of those who need to work with a view to preserving this minimum basis of social activities. It is necessary precisely to that normality can be re-establish as soon as possible. Experts already demonstrated two realities: mortality rates are really low, but the risk of contamination is very high. It is also shown that the vast majority of those infected will experience very mild symptoms similar to the common flu. This argument, which is current by advocates of "normal already," can not obscure the fact that, if rates are low, the absolute numbers tend to be very high, with dramatic effects on the health system. Thus, "normalistas" speak for resumption of order, but sow a deep disorganization potential of society.
 
 In short, not practice temporary social isolation can produce a social catastrophe which, in consequence, will also be economical. And do not preserve the incomes of workers and entrepreneurs in an isolation environment further aggravate a picture that is already sufficiently dramatic. There will be three or four months in which we will only have one certainty: there is no room to imagine merely individual outputs. The COVID-19 is leaving us a hard message, but clear: either we build better alternatives together, or perish collectively.
-<small>
+<br><small>
 [1] The term "sudden stop" has been used in literature to designate financial crises sudden and intense process of capital flight, usually associated with foreign exchange and balance of payments crises. Your current job is due to the work of the economist Guillermo Calvo.
-
+</small>
+<small>
 [2] See details at: https://www.worldometers.info/coronavirus/. This source compiles the information provided by WHO and national governments.
-
+  </small>
+<small>
 [3] See the estimates of Gourinchas (2020), Flattening the pandemic and recession curves (https://sites.google.com/view/pgourinchas/home).
-
+</small>
+  <small>
 [4] See the Manifesto of FCE Teachers in: https://www.ufrgs.br/fce/professores-da-ufrgs-lancam-manifesto-com-diretrizes-para-combate-a-pandemia-do-novo- coronavirus /.
-
+</small>
 [5] See: "The policies that are being adopted to combat Covid-19: International Experience and Brazil," Manoel Pires - IBRE - Observatory of Fiscal Economics, March 23, 2020.
 </small>
-<small>ource: <a href='https://www.ufrgs.br/fce/a-pandemia-do-covid-19-e-o-isolamento-social-saude-versus-economia/'><a></small
+<small>
+<Source: <a href='https://www.ufrgs.br/fce/a-pandemia-do-covid-19-e-o-isolamento-social-saude-versus-economia/'><a></small
