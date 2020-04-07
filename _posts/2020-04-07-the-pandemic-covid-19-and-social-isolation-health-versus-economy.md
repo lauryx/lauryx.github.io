@@ -64,4 +64,5 @@ In short, not practice temporary social isolation can produce a social catastrop
 [4] See the Manifesto of FCE Teachers in: https://www.ufrgs.br/fce/professores-da-ufrgs-lancam-manifesto-com-diretrizes-para-combate-a-pandemia-do-novo- coronavirus /.
 
 [5] See: "The policies that are being adopted to combat Covid-19: International Experience and Brazil," Manoel Pires - IBRE - Observatory of Fiscal Economics, March 23, 2020.
-Source: <a href='https://www.ufrgs.br/fce/a-pandemia-do-covid-19-e-o-isolamento-social-saude-versus-economia/'><a></small
+</small>
+<small>ource: <a href='https://www.ufrgs.br/fce/a-pandemia-do-covid-19-e-o-isolamento-social-saude-versus-economia/'><a></small
