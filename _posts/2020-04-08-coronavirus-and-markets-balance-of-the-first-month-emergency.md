@@ -43,4 +43,4 @@ Among the declines also care about high yield bonds, down more than 10 percentag
 
 
 These deep fears - that is matched by the index superbalzo of fear, the Vix, which measures the volatility of the markets is that last month went from 14 to 65 points, 350% more - are coming despite the strong measures taken in the meantime by the central banks. Last in order of importance the one announced by the Federal Reserve Sunday, March 15 by cutting the cost of borrowing by 100 basis points to level 0 and allocating 700 billion dollars for the purchase of securities. Year to date the central banks around the world have announced 45 cuts, most of which at least 50 basis points. But for now, these maneuvers have not assuaged the fears of investors, the fact they have fueled considered their exceptional nature that served to emphasize, even if proof were needed, the severity of the situation.
-<small>Source: <a href='https://www.ilsole24ore.com/art/coronavirus-e-mercati-bilancio-primo-mese-emergenza-ADMKOmD'><a></small>
+<small>Source: <a href='https://www.ilsole24ore.com/art/coronavirus-e-mercati-bilancio-primo-mese-emergenza-ADMKOmD'></a></small>
