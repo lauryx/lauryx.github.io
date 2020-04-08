@@ -79,5 +79,5 @@ There is high demand, but also high competition. So what is it that makes you st
 
 A little help on the road
 
-Whatever you decide, make a business plan and get you the resources you need to get it right. Often new startup entrepreneurs do not loan even if they are good payers with good income - then a short-term consumer loans from us be of good help. Read about Flexi Credit here
-<small>Source: <span><a href='https://www.ferratum.no/blog/2019/08/21/8-ideer-til-bedrifter-du-kan-drive-hjemmefra'><a></span></small>
+
+<small>Source: <span><a href='https://www.ferratum.no/blog/2019/08/21/8-ideer-til-bedrifter-du-kan-drive-hjemmefra'></a></span></small>
