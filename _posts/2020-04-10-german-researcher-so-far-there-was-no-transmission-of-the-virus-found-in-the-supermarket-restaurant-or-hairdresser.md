@@ -22,7 +22,7 @@ In a press conference, the teacher explained the methodology of its new study in
 
 In recent weeks, the team has completed substantial research carried out by sampling and investigation of the region Heinsberg houses, where they were reported over 1,400 cases of infection with the novel coronavirus. Heinsberg has a population of about 250,000 people and recorded 46 deaths.
 
-Read also: Analysis BBC: We get rid of coronavirus summer?
+
 
 Streeck says that the virus could not be found on doorknobs or pet fur.
 
@@ -41,4 +41,4 @@ Heinsberg center will now be conducting another study on how the virus spread. T
 "The results of this more detailed study could serve as a basis for recommendations and national strategies out of isolation," said Streeck. "It is important to get this information to ensure that decisions are made based on evidence, not on assumptions," said Hendrik Streeck.
 
 
-<small>Source: <span><a href='https://www.digi24.ro/amphtml/stiri/externe/cercetator-german-pana-acum-nu-s-a-dovedit-nicio-transmitere-a-virusului-in-supermarket-restaurant-sau-coafor-1289419'></a>https://www.digi24.ro/amphtml/stiri/externe/cercetator-german-pana-acum-nu-s-a-dovedit-nicio-transmitere-a-virusului-in-supermarket-restaurant-sau-coafor-1289419</span></small>
+<small><span><a href='https://www.digi24.ro/amphtml/stiri/externe/cercetator-german-pana-acum-nu-s-a-dovedit-nicio-transmitere-a-virusului-in-supermarket-restaurant-sau-coafor-1289419'></a>Source</span></small>
