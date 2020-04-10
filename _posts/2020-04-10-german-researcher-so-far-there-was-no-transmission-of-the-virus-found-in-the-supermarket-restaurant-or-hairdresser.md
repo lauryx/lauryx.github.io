@@ -5,20 +5,6 @@ title: German researcher "So far, there was no transmission of the virus found i
 description: ' |
 
   German researcher "So far, proved no transmission of the virus in the supermarket,
-   Hendrik Streeck, director of the
-  Institute of Virology at the University Hospital of Bonn, says that the new coronavirus
-  is transmitted not as easy as it's believed.
-
-  Streeck says that the virus could not be found on doorknobs or pet fur.
-
-  Professor says no virus found "living" surface "When I took samples from door handles,
-  telephones or toilets, it was not possible to cultivate the virus in the laboratory."
-
-  He said in an interview that the new coronavirus is highly sensitive to drying,
-  so the only way to contact them is through "inhalation of droplets
-
-  "It is important to get this information to ensure that decisions are made based
-  on evidence, not on assumptions," said Hendrik Streeck.'
 
 image: 
 category: news
