@@ -14,7 +14,7 @@ paginate: true
 
 German researcher: "So far, there was no transmission of the virus found in the supermarket, restaurant or hairdresser"
 
-04/09/2020
+
 
 Professor Hendrik Streeck, director of the Institute of Virology at the University Hospital of Bonn, says that the new coronavirus is transmitted not as easy as people think.
 
