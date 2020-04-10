@@ -1,7 +1,7 @@
 --- 
 date: 2020-04-10 17:42:57
 layout: post
-title: German researcher - "So far, there was no transmission of the virus found in the supermarket, restaurant or hairdresser"
+title: German researcher "So far, there was no transmission of the virus found in the supermarket, restaurant or hairdresser"
 description: ' |
 
   German researcher "So far, proved no transmission of the virus in the supermarket,
