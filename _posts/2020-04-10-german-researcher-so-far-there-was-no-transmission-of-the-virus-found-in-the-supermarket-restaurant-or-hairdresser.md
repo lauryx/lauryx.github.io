@@ -15,7 +15,7 @@ description: ' |
   telephones or toilets, it was not possible to cultivate the virus in the laboratory."
 
   He said in an interview that the new coronavirus is highly sensitive to drying,
-  so the only way to contact them is through "inhalation of droplets".
+  so the only way to contact them is through "inhalation of droplets
 
   "It is important to get this information to ensure that decisions are made based
   on evidence, not on assumptions," said Hendrik Streeck.'
