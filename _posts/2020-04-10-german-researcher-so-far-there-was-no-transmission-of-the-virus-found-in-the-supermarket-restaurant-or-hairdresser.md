@@ -4,7 +4,7 @@ layout: post
 title: German researcher: "So far, there was no transmission of the virus found in the supermarket, restaurant or hairdresser"
 description: ' |
 
-  German researcher: "So far, proved no transmission of the virus in the supermarket,
+  German researcher "So far, proved no transmission of the virus in the supermarket,
    Hendrik Streeck, director of the
   Institute of Virology at the University Hospital of Bonn, says that the new coronavirus
   is transmitted not as easy as it's believed.
