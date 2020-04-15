@@ -16,7 +16,7 @@ menu:
   - title: Home
     url: /
   - title: News
-    url: /category/
+    url: /category/news
   - title: About
     url: /about
   - title: Contact
