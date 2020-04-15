@@ -11,11 +11,14 @@ show_hero: true
 menu:
   - title: Home
     url: /
+  - title: News
+    url: /category/
   - title: About
     url: /about
   - title: Contact
     url: /contact
   - title: Feed
     url: /feed.xml
+
 email: youremail@xyz.com
 disqus_username: disqus_username
