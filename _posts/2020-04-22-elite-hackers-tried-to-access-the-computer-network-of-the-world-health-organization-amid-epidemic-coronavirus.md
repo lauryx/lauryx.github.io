@@ -43,6 +43,6 @@ Messages sent to hacker email addresses were not answered.
 
 Information provided by Urbelis were confirmed by the WHO director for cyber security, Flavio Aggio.
 
-The above article is intended solely for your personal information. If you are a news organization or a company and want an agreement to republish our articles, please send us a mail to abonamente@news.ro.
+The above article is intended solely for your personal information. If you are a news organization or a company and want an agreement to republish our articles, please send us a mail to 
 <small>
 <span><a href='https://www.news.ro/economic/hackeri-de-elita-au-incercat-sa-acceseze-reteaua-informatica-a-organizatiei-mondiale-a-sanatatii-pe-fondul-epidemiei-de-coronavirus-1922400024002020030719313107'>Source</a></span></small>
